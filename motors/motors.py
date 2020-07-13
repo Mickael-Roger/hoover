@@ -9,6 +9,14 @@ in3 = 38
 in4 = 36
 enb = 37
 
+
+def backward():
+  GPIO.output(in1,GPIO.HIGH)
+  GPIO.output(in2,GPIO.LOW)
+  GPIO.output(in1,GPIO.HIGH)
+  GPIO.output(in2,GPIO.LOW)
+
+
 GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(in1,GPIO.OUT)
@@ -24,13 +32,13 @@ GPIO.output(in2,GPIO.LOW)
 GPIO.output(in3,GPIO.LOW)
 GPIO.output(in4,GPIO.LOW)
 
-p=GPIO.PWM(ena,1000)
-p=GPIO.PWM(enb,1000)
+pa=GPIO.PWM(ena,1000)
+pb=GPIO.PWM(enb,1000)
 
-p.start(50)
+pa.start(100)
+pb.start(100)
 
-GPIO.output(in1,GPIO.HIGH)
-GPIO.output(in2,GPIO.LOW)
+backward()
 
 time.sleep(10)
 
