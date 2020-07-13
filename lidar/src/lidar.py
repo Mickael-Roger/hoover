@@ -30,7 +30,7 @@ class Lidar():
     def start(self):
         mesurements = self.lidar.StartScanning()
         while True:
-            self.pub.publish(str(mesurements))
+            self.pub.publish(str(next(mesurements)))
 
 
     def stop(self):

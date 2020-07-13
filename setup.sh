@@ -20,4 +20,4 @@ catkin_create_pkg hoover std_msgs rospy
 
 cp -rf $mydir/lidar/src/* ~/catkin_ws/src/lidar/src/
 cp -rf $mydir/hoover/src/* ~/catkin_ws/src/hoover/src/
-chmod +x ~/catkin_ws/src/lidar/lidar.py ~/catkin_ws/src/hoover/hoover.py
+chmod +x ~/catkin_ws/src/lidar/src/lidar.py ~/catkin_ws/src/hoover/src/hoover.py
