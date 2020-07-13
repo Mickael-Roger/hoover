@@ -11,11 +11,18 @@ enb = 37
 
 
 def backward():
-  GPIO.output(in1,GPIO.HIGH)
-  GPIO.output(in2,GPIO.LOW)
-  GPIO.output(in3,GPIO.HIGH)
-  GPIO.output(in4,GPIO.LOW)
+    GPIO.output(in1,GPIO.HIGH)
+    GPIO.output(in2,GPIO.LOW)
+    GPIO.output(in3,GPIO.HIGH)
+    GPIO.output(in4,GPIO.LOW)
 
+
+def forward():
+    GPIO.output(in1,GPIO.LOW)
+    GPIO.output(in2,GPIO.HIGH)
+    GPIO.output(in3,GPIO.LOW)
+    GPIO.output(in4,GPIO.HIGH)
+    
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -39,7 +46,9 @@ pa.start(100)
 pb.start(100)
 
 backward()
+time.sleep(10)
 
+forward()
 time.sleep(10)
 
 GPIO.cleanup()
