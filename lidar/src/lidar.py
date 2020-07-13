@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import PyLidar3
 import rospy
 from std_msgs.msg import String
@@ -17,7 +18,13 @@ class Lidar():
         try:
             self.pub = rospy.Publisher('lidar', String, queue_size=100)
             rospy.init_node('lidar', anonymous=True)
+        except:
+            raise ValueError("Could not start ROS msg queue")
 
+
+    def __del__(self):
+        self.stop()
+        self.lidar.Disconnect()
 
 
     def start(self):
@@ -28,11 +35,6 @@ class Lidar():
 
     def stop(self):
         self.lidar.StopScanning()
-
-    def __del__(self):
-        self.stop()
-        self.lidar.Disconnect()
-
 
 
 if __name__ == '__main__':
