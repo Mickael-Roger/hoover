@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import smbus			#import SMBus module of I2C
-from time import sleep          #import
+import smbus
+from time import sleep
 
-#some MPU6050 Registers and their Address
+#MPU6050 Registers and their Address
 PWR_MGMT_1   = 0x6B
 SMPLRT_DIV   = 0x19
 CONFIG       = 0x1A
@@ -17,19 +17,10 @@ GYRO_ZOUT_H  = 0x47
 
 
 def MPU_Init():
-	#write to sample rate register
 	bus.write_byte_data(Device_Address, SMPLRT_DIV, 7)
-	
-	#Write to power management register
 	bus.write_byte_data(Device_Address, PWR_MGMT_1, 1)
-	
-	#Write to Configuration register
 	bus.write_byte_data(Device_Address, CONFIG, 0)
-	
-	#Write to Gyro configuration register
 	bus.write_byte_data(Device_Address, GYRO_CONFIG, 24)
-	
-	#Write to interrupt enable register
 	bus.write_byte_data(Device_Address, INT_ENABLE, 1)
 
 def read_raw_data(addr):
@@ -46,7 +37,7 @@ def read_raw_data(addr):
         return value
 
 
-bus = smbus.SMBus(1) 	# or bus = smbus.SMBus(0) for older version boards
+bus = smbus.SMBus(1)
 Device_Address = 0x68   # MPU6050 device address
 
 MPU_Init()
