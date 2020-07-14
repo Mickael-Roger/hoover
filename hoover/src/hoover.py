@@ -19,7 +19,15 @@ class Hoover():
         rospy.loginfo(rospy.get_caller_id() + "%s %s %s %s", str(mesure['0']), str(mesure['90']),str(mesure['180']),str(mesure['270']))
 
     def parseMsg(self, msg):
-        
+        msg=msg.translate({ord(' '): None, ord('{'): None, ord('}'): None, ord('\n'): None})
+        res={}
+
+        for mesure in msg.split(','):
+            val=mesure.split(':')
+            res[val[0]] = int(val[1]) 
+
+        return res
+
 
 
 if __name__ == '__main__':
