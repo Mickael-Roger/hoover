@@ -15,7 +15,11 @@ class Hoover():
         rospy.spin()
 
     def lidarMessage(self, data):
-        rospy.loginfo(rospy.get_caller_id() + "%s", data.data)
+        mesure = self.parseMsg(data.data)
+        rospy.loginfo(rospy.get_caller_id() + "%s %s %s %s", str(mesure['0']), str(mesure['90']),str(mesure['180']),str(mesure['270']))
+
+    def parseMsg(self, msg):
+        
 
 
 if __name__ == '__main__':
