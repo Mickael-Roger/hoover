@@ -1,8 +1,11 @@
+#!/usr/bin/python3
 import RPi.GPIO as GPIO   
 import rospy
 import time
 
-class Motors():
+from hoover.srv import Motion 
+
+class Motors:
     
     def __init__(self):
 
@@ -80,16 +83,27 @@ class Motors():
         GPIO.cleanup()
 
 
+    def move(self, action):
+        actionTable = {'forward': self.forward,
+                       'backward': self.backward,
+                       'right': self.right,
+                       'left': self.left,
+                       'stop': self.stop}
 
-      
-robot = Motors()
+        try:
+            self.speed(int(action.speed))
+            actionTable[action.action]
+            return "OK"
+        except:
+            return "KO"
 
-robot.speed(4)
-robot.right()
-time.sleep(10)
 
-robot.stop()
-
-del robot
-
+if __name__ == "main":
+    
+    try:
+        robot = Motors()
+        svc = rospy.Service('Motion', Motion, robot.move)
+    except rospy.ROSInterruptException:
+        del robot
+        pass
 

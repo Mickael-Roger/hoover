@@ -9,7 +9,7 @@ class Mapping():
 
     def __init__(self):
         rospy.init_node('mapping', anonymous=True)
-        self.postion = [1000., 1000.]
+        self.position = [1000., 1000.]
         self.map = np.zeros((2000, 2000))
 
 
@@ -28,9 +28,9 @@ class Mapping():
         
         for mesure in mesures:
             distance = int(mesures[mesure])/10
-            x = self.position[0] + distance
-            y = self.position[1] + math.tan(math.degrees(int(mesure))) * distance
-            self.map[x][y] = 1.
+            x = round(self.position[0] + distance)
+            y = round(self.position[1] + math.tan(math.degrees(int(mesure))) * distance)
+            self.map[x][y] = 1
             
         print('\n'.join([''.join(['{:2}'.format(item) for item in row]) for row in self.map]))
         print("------------------------------------")
