@@ -55,29 +55,29 @@ class Motors:
     def backward(self):
         GPIO.output(self.in1,GPIO.HIGH)
         GPIO.output(self.in2,GPIO.LOW)
-        GPIO.output(self.in3,GPIO.HIGH)
-        GPIO.output(self.in4,GPIO.LOW)
+        GPIO.output(self.in3,GPIO.LOW)
+        GPIO.output(self.in4,GPIO.HIGH)
 
 
     def forward(self):
         GPIO.output(self.in1,GPIO.LOW)
         GPIO.output(self.in2,GPIO.HIGH)
-        GPIO.output(self.in3,GPIO.LOW)
-        GPIO.output(self.in4,GPIO.HIGH)
+        GPIO.output(self.in3,GPIO.HIGH)
+        GPIO.output(self.in4,GPIO.LOW)
 
 
     def right(self):
         GPIO.output(self.in1,GPIO.LOW)
         GPIO.output(self.in2,GPIO.HIGH)
-        GPIO.output(self.in3,GPIO.HIGH)
-        GPIO.output(self.in4,GPIO.LOW)
+        GPIO.output(self.in3,GPIO.LOW)
+        GPIO.output(self.in4,GPIO.HIGH)
 
 
     def left(self):
         GPIO.output(self.in1,GPIO.HIGH)
         GPIO.output(self.in2,GPIO.LOW)
-        GPIO.output(self.in3,GPIO.LOW)
-        GPIO.output(self.in4,GPIO.HIGH)
+        GPIO.output(self.in3,GPIO.HIGH)
+        GPIO.output(self.in4,GPIO.LOW)
     
     
     def __del__(self):
