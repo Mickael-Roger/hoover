@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-09-05T18:06:01.815Z" agent="5.0 (X11)" etag="bqzWU1PrXRyq1XbmEaYo" version="13.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-05T18:08:02.598Z" agent="5.0 (X11)" etag="eu9bNocY6_bEBSXxAPHQ" version="13.6.6" type="github" pages="2">
   <diagram id="R3SiRMFxgYjuJNOLao2z" name="Hardware">
-    <mxGraphModel dx="276" dy="149" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="110" dy="59" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -157,6 +157,18 @@
         </mxCell>
         <mxCell id="xIumV7urKmraXYFZjmjs-49" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="340" y="561" width="8" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="ylG90S7znOfI5WwPX2T3-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#0050ef;strokeColor=#001DBC;" edge="1" parent="1" source="xIumV7urKmraXYFZjmjs-50" target="xIumV7urKmraXYFZjmjs-93">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="341" y="579" as="sourcePoint" />
+            <mxPoint x="571.0000000000135" y="586" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="345" y="579" />
+              <mxPoint x="345" y="596" />
+              <mxPoint x="554" y="596" />
+              <mxPoint x="554" y="586" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="xIumV7urKmraXYFZjmjs-50" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="340" y="571" width="8" height="8" as="geometry" />
