@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-05T17:21:41.393Z" agent="5.0 (X11)" etag="Vo03K7y4LQbNKaEseeRw" version="13.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-09-05T17:22:46.879Z" agent="5.0 (X11)" etag="n9JZh8C2b-xet9SXa86D" version="13.6.6" type="github" pages="2">
   <diagram id="R3SiRMFxgYjuJNOLao2z" name="Hardware">
     <mxGraphModel dx="813" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -384,21 +384,20 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Hr2VfhCFNMmHcY7PxICB" name="Middleware">
-    <mxGraphModel dx="276" dy="149" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="569" dy="307" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="97mYZWVkJzpR4eBEVFH7-0" />
         <mxCell id="97mYZWVkJzpR4eBEVFH7-1" parent="97mYZWVkJzpR4eBEVFH7-0" />
         <mxCell id="97mYZWVkJzpR4eBEVFH7-2" value="UBUNTU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;fontStyle=1" vertex="1" parent="97mYZWVkJzpR4eBEVFH7-1">
-          <mxGeometry x="160" y="600" width="638" height="120" as="geometry" />
+          <mxGeometry x="160" y="600" width="638" height="40" as="geometry" />
         </mxCell>
         <mxCell id="97mYZWVkJzpR4eBEVFH7-3" value="&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ROS&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontSize=14;fontStyle=1" vertex="1" parent="97mYZWVkJzpR4eBEVFH7-1">
           <mxGeometry x="160" y="470" width="638" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="97mYZWVkJzpR4eBEVFH7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeWidth=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="97mYZWVkJzpR4eBEVFH7-1" source="97mYZWVkJzpR4eBEVFH7-4" target="97mYZWVkJzpR4eBEVFH7-5">
+        <mxCell id="97mYZWVkJzpR4eBEVFH7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.025;exitY=0.498;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeWidth=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;exitPerimeter=0;" edge="1" parent="97mYZWVkJzpR4eBEVFH7-1" source="97mYZWVkJzpR4eBEVFH7-4" target="97mYZWVkJzpR4eBEVFH7-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="211" y="330" />
-              <mxPoint x="147" y="330" />
+              <mxPoint x="147" y="400" />
               <mxPoint x="147" y="617" />
             </Array>
           </mxGeometry>
