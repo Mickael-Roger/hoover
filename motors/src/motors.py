@@ -9,12 +9,13 @@ class Motors:
     
     def __init__(self):
 
-        self.in1 = 33
-        self.in2 = 40
-        self.ena = 35
+        self.ena = 33
+        self.in1 = 35
+        self.in2 = 37
+        
+        self.enb = 36
         self.in3 = 38    
-        self.in4 = 36
-        self.enb = 37
+        self.in4 = 40
 
 
         GPIO.setmode(GPIO.BOARD)
