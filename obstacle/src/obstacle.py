@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import ime
+import time
 import RPi.GPIO as GPIO
 import rospy
 from std_msgs.msg import String
@@ -10,12 +10,12 @@ GPIO.setmode(GPIO.BCM)
 
 class Obstacle():
 
-    def __init__(self():
+    def __init__(self):
                 
-        self.leftTrigger = 18
-        self.rightTrigger = 24
-        self.leftEcho = 18
-        self.rightEcho = 24
+        self.leftTrigger = 11
+        self.leftEcho = 13
+        self.rightTrigger = 29
+        self.rightEcho = 31
         
         GPIO.setup(self.leftTrigger, GPIO.OUT)
         GPIO.setup(self.rightTrigger, GPIO.OUT)
@@ -28,14 +28,18 @@ class Obstacle():
             rospy.init_node('obstacle', anonymous=True)
         except:
             raise ValueError("Could not start ROS msg queue")
+
+        print("Init OK")
             
             
 
     def distance(self):
     
         mesure = {}
+        print("Distance")
         
         for side in [(self.leftTrigger, self.leftEcho, "left"), (self.rightTrigger, self.rightEcho, "right")]:
+            print("Side : " + str(side))
             trigger=side[0]
             echo=side[1]
             
@@ -43,29 +47,33 @@ class Obstacle():
             time.sleep(0.00001)
             GPIO.output(trigger, False)
  
-        StartTime = time.time()
-        StopTime = time.time()
- 
-
-        while GPIO.input(GPIO_ECHO) == 0:
             StartTime = time.time()
- 
-        while GPIO.input(GPIO_ECHO) == 1:
             StopTime = time.time()
  
-        TimeElapsed = StopTime - StartTime
 
-        distance = (TimeElapsed * 34300) / 2
+            while GPIO.input(echo) == 0:
+                StartTime = time.time()
+ 
+            while GPIO.input(echo) == 1:
+                StopTime = time.time()
+ 
+            TimeElapsed = StopTime - StartTime
+
+            distance = (TimeElapsed * 34300) / 2
         
-        mesure[side[2]] = distance
+            mesure[side[2]] = distance
+            print("Mesure" + str(side[2]) + " " + str(distance))
  
         return mesure
 
 
     def start(self):
-        mesures = self.distance()
+        print("Start")
         while True:
+            mesures = self.distance()
+            print("Mesure : " + str(mesures))
             self.pub.publish(str(next(mesures)))
+            time.sleep(1)
 
 
     def __del__(self):

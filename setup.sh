@@ -2,6 +2,8 @@
 
 mydir=`pwd`
 
+source /opt/ros/melodic/setup.bash
+
 if [ -d ~/catkin_ws ]
 then
 	echo "Catkin workspace already exists. Backing it up"
@@ -17,6 +19,7 @@ source devel/setup.bash
 cd ~/catkin_ws/src
 catkin_create_pkg hoover std_msgs rospy message_generation message_runtime
 
+cp -rf $mydir/obstacle/src/* ~/catkin_ws/src/hoover/src/
 cp -rf $mydir/lidar/src/* ~/catkin_ws/src/hoover/src/
 cp -rf $mydir/motors/src/* ~/catkin_ws/src/hoover/src/
 cp -rf $mydir/hoover/src/* ~/catkin_ws/src/hoover/src/
