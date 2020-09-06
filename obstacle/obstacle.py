@@ -23,6 +23,14 @@ class Obstacle():
         GPIO.setup(self.rightEcho, GPIO.IN)
 
 
+        try:
+            self.pub = rospy.Publisher('obstacle', String, queue_size=100)
+            rospy.init_node('obstacle', anonymous=True)
+        except:
+            raise ValueError("Could not start ROS msg queue")
+            
+            
+
     def distance(self):
     
         mesure = {}
@@ -51,4 +59,23 @@ class Obstacle():
         
         mesure[side[2]] = distance
  
-    return mesure
+        return mesure
+
+
+    def start(self):
+        mesures = self.distance()
+        while True:
+            self.pub.publish(str(next(mesures)))
+
+
+    def __del__(self):
+        GPIO.cleanup()
+            
+
+if __name__ == '__main__':
+    try:
+        obstacle=Obstacle()
+        obstacle.start()
+    except rospy.ROSInterruptException:
+        del obstacle
+        pass
