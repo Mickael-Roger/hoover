@@ -72,7 +72,7 @@ class Obstacle():
         while True:
             mesures = self.distance()
             print("Mesure : " + str(mesures))
-            self.pub.publish(str(next(mesures)))
+            self.pub.publish(str(mesures))
             time.sleep(1)
 
 
