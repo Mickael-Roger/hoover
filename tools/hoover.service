@@ -1,0 +1,9 @@
+[Unit]
+Description=start hoover
+After=roscore.service
+[Service]
+ExecStart=/usr/local/bin/hooverService.sh
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
