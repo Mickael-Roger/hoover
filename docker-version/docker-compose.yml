@@ -1,0 +1,16 @@
+version: "3"
+services:
+  rabbitmq:
+    image: "rabbitmq:alpine"
+    environment:
+      RABBITMQ_DEFAULT_USER: hoover
+      RABBITMQ_DEFAULT_PASS: password
+    restart: always
+  hoover:
+    build: hoover/
+    depends_on:
+      - "rabbitmq"
+    environment:
+      RABBITMQ_DEFAULT_USER: hoover
+      RABBITMQ_DEFAULT_PASS: password
+

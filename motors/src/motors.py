@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import rospy
 import time
 
-from hoover.srv import Motion 
+from Motion.srv import Motion 
 
 class Motors:
     
