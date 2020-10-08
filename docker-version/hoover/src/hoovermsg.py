@@ -32,7 +32,7 @@ class msg():
            
           
     def send(seld, msg):
-        channel.basic_publish(exchange='',
+        self.channel.basic_publish(exchange='',
                       routing_key=self.msgName,
                       body=msg)
         
