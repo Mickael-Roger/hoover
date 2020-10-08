@@ -3,7 +3,7 @@ import time
 
 class msg():
   
-    def __init__(self, msgName)::
+    def __init__(self, msgName):
         rabbitmqUser = os.environ['RABBITMQ_DEFAULT_USER']
         rabbitmqPasswd = os.environ['RABBITMQ_DEFAULT_USER']
         self.msgName = msgName
