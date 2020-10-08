@@ -9,16 +9,18 @@ services:
     healthcheck:
       start_period: 30s
   hoover:
-    context: ./hoover/
-    dockerfile: Dockerfile-hoover
+    build:
+      context: ./hoover/
+      dockerfile: Dockerfile-hoover
     depends_on:
       - "rabbitmq"
     environment:
       RABBITMQ_DEFAULT_USER: hoover
       RABBITMQ_DEFAULT_PASS: password
   camera:
-    context: ./hoover/
-    dockerfile: Dockerfile-camera
+    build:
+      context: ./hoover/
+      dockerfile: Dockerfile-camera
     depends_on:
       - "rabbitmq"
     environment:
