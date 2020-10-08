@@ -1,18 +1,22 @@
 import os
 import time
-
+import hoovermsg as msg
 
 class Hoover():
 
     def __init__(self):
-        self.rabbitmqUser = os.environ['RABBITMQ_DEFAULT_USER']
-        self.rabbitmqPasswd = os.environ['RABBITMQ_DEFAULT_USER']
         self.srv = ('camera')
+        
+        self.services={}
+        
+        for srv in self.srv:
+            services[srv] = msg.msg(msgName=srv)
+            
+        
 
     def start(self):
-        print("toto")
-        print(self.rabbitmqUser)
-        print(self.rabbitmqPasswd)
+        if 'camera' in self.services:
+            self.services['camera'].send('{"action": "takePicture"}')
         time.sleep(3600)
 
 
