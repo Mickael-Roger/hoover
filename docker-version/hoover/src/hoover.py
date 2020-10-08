@@ -14,9 +14,10 @@ class Hoover():
         
 
     def start(self):
-        if 'camera' in self.services:
-            self.services['camera'].send('{"action": "takePicture"}')
-        time.sleep(3600)
+        while True:
+            if 'camera' in self.services:
+                self.services['camera'].send('{"action": "takePicture"}')
+            time.sleep(1)
 
 
 
