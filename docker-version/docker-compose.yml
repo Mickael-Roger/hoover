@@ -6,8 +6,6 @@ services:
       RABBITMQ_DEFAULT_USER: hoover
       RABBITMQ_DEFAULT_PASS: password
     restart: always
-    healthcheck:
-      start_period: 30s
   hoover:
     build:
       context: ./hoover/
