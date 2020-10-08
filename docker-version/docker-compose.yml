@@ -7,7 +7,16 @@ services:
       RABBITMQ_DEFAULT_PASS: password
     restart: always
   hoover:
-    build: hoover/
+    context: ./hoover/
+    dockerfile: Dockerfile-hoover
+    depends_on:
+      - "rabbitmq"
+    environment:
+      RABBITMQ_DEFAULT_USER: hoover
+      RABBITMQ_DEFAULT_PASS: password
+  camera:
+    context: ./hoover/
+    dockerfile: Dockerfile-camera
     depends_on:
       - "rabbitmq"
     environment:
