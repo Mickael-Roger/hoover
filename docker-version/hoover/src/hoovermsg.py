@@ -1,5 +1,6 @@
 import pika
 import time
+import os
 
 class msg():
   
