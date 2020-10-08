@@ -4,11 +4,10 @@ import hoovermsg as msg
 class Hoover():
 
     def __init__(self):
-        self.srv = ('camera')
-        
+
         self.services={}
         
-        for srv in self.srv:
+        for srv in ('camera',):
             self.services[srv] = msg.msg(msgName=srv)
             
         
