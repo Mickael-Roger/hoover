@@ -1,18 +1,35 @@
 import pika
+import time
 
 class msg():
   
     def __init__(self, msgName)::
-        self.rabbitmqUser = os.environ['RABBITMQ_DEFAULT_USER']
-        self.rabbitmqPasswd = os.environ['RABBITMQ_DEFAULT_USER']
+        rabbitmqUser = os.environ['RABBITMQ_DEFAULT_USER']
+        rabbitmqPasswd = os.environ['RABBITMQ_DEFAULT_USER']
         self.msgName = msgName
-        channel.queue_declare(queue=self.msgName)
+        
+        connect=0
+        while connect == 0:
+            try:
+                credentials = pika.PlainCredentials(rabbitmqUser, rabbitmqPasswd)
+                connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', credentials=credentials))
+                self.channel = connection.channel()
+                connect=1
+            except:
+                print('Could not connect to RabbitMQ ... Retrying')
+                time.sleep(1)
+                pass
+        
+        self.channel.queue_declare(queue=self.msgName)
+        
         
     def listen(self, callback):
-        channel.basic_consume(queue=self.msgName,
+        self.channel.basic_consume(queue=self.msgName,
                       auto_ack=True,
                       on_message_callback=callback)
-                      
+        self.channel.start_consuming()
+           
+          
     def send(seld, msg):
         channel.basic_publish(exchange='',
                       routing_key=self.msgName,
