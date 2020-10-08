@@ -9,7 +9,7 @@ class Camera():
         print('Reicv : ' + str(body))
 
     def start(self):
-        self.queue.listen(callback=dispatch)
+        self.queue.listen(callback=self.dispatch)
 
 
 
