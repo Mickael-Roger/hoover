@@ -9,7 +9,7 @@ class Hoover():
         self.services={}
         
         for srv in self.srv:
-            services[srv] = msg.msg(msgName=srv)
+            self.services[srv] = msg.msg(msgName=srv)
             
         
 
