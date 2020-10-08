@@ -31,7 +31,7 @@ class msg():
         self.channel.start_consuming()
            
           
-    def send(seld, msg):
+    def send(self, msg):
         self.channel.basic_publish(exchange='',
                       routing_key=self.msgName,
                       body=msg)
